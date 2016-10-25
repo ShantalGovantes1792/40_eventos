@@ -12,8 +12,9 @@ element.addEventListener("submit", function(event) {
 var eventoBoton = document.getElementById("boton");
 	eventoBoton.addEventListener("click", agregarLista);
 
+var spanTrash = document.getElementsByTagName("span");
 
-function agregarLista(){
+function agregarLista(e){
 	var textoArea = document.getElementById("textoArea").value;
 
 	if ( textoArea == 0 ){
@@ -37,5 +38,16 @@ function agregarLista(){
 		lista.appendChild(spanTrash);
 		listaUl.appendChild(lista);
 	}
-}
+	document.getElementById("textoArea").value = "";
+	for ( i = 0; i < spanTrash.length; i++ ){
+		spanTrash[i].onclick = function(e){
+		listaUl.parentElement.removeChild(lista);			
+
+		}
+	}
+
+};
+
+
+
 
