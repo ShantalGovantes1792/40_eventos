@@ -40,7 +40,11 @@ function agregarLista(e){
 
 		spanTrash.onclick = function (){
 		listaUl.removeChild(lista);
-	}
+		};
+		check.onclick = function(){
+			listaUl.classList.toggle("delineado");
+		};
+
 	document.getElementById("textoArea").value = "";
 
 	}
