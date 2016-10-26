@@ -37,13 +37,12 @@ function agregarLista(e){
 		lista.appendChild(textoArea);
 		lista.appendChild(spanTrash);
 		listaUl.appendChild(lista);
+
+		spanTrash.onclick = function (){
+		listaUl.removeChild(lista);
 	}
 	document.getElementById("textoArea").value = "";
-	for ( i = 0; i < spanTrash.length; i++ ){
-		spanTrash[i].onclick = function(e){
-		listaUl.parentElement.removeChild(lista);			
 
-		}
 	}
 
 };
